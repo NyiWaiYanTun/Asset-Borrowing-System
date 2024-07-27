@@ -1,0 +1,307 @@
+        body{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+        /* ------------------------style for nav bar---------------------------- */
+        .nav {
+            min-height: 100vh;
+            padding: 40px 10px;
+            position: fixed;
+            left: 0;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .link-container {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .link-container a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .link-container li {
+            width: 100%;
+            padding: 10px;
+            text-align: start;
+        }
+
+        .link-container li:hover {
+            background-color: #D1D1D1;
+            color: navy;
+        }
+
+        .link-container img {
+            margin-right: 10px;
+        }
+
+        .link-container span {
+            margin-left: 10px;
+        }
+
+        /* Logout Button */
+        .link-container button {
+            position: fixed;
+            bottom: 70px;
+            left: 80px;
+            border: 2px solid black;
+        }
+
+        /*------------------------- style for content------------------------- */
+        .content {
+            padding: 20px;
+            margin-left: 250px;
+            transition: transform 0.3s ease-in-out;
+        }
+        /* --------------------------Classes for toggle--------------------------- */
+        .closedNav {
+            transform: translateX(-100%);
+        }
+        .closedContent{
+            transform: translateX(-14.30%);
+            width: 95%;
+        }
+        /* -------------------for Scrollable and hidden scroll bar---------------- */
+        .scrollable{
+            overflow-y: scroll; /* Enable vertical scrollbar if content exceeds height */
+            max-height: calc(100vh - 12vh); /* Adjusted for header height */
+        }
+        .scrollable::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+        }
+        thead{
+            z-index: 1;
+            position: sticky;
+            top: 0;
+        }
+        table{
+            text-align: center;
+        }
+        /* -------------------------------home -------------------------------- */
+        .c-item{
+            height: 580px;
+        }
+        .c-image{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .news-inner{
+            display: flex;
+             padding: 1em;
+        }
+        .news-item{
+            display: block;
+            margin-right: 0;
+            flex: 0 0 calc(100%/3);
+        }
+        .card{
+            height: 450px;
+            margin: 0.5em;
+        }
+        .img-wrapper{
+            max-width: 100%;
+            height: 23vw;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .img-wrapper img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .carousel-control-next, .carousel-control-prev{
+            width: 6vh;
+            height: 6vh;
+            background-color: black;
+            border-radius: 50%;
+            top: 50%;
+        }
+          /* Change the color of inactive indicator buttons */
+          .carousel-indicators button {
+            background-color: black !important; /* Light green color */
+          }
+        /* profile show */
+        .sub-menu-wrap{
+            position: absolute;
+            top: 100;
+            right: 2%;
+            width: auto;
+            display: none;
+        }
+        .showProfile{
+            display: block;
+        }
+        .sub-menu{
+            background-color:ghostwhite;
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid black;
+            z-index: 2;
+        }
+        .user-info{
+            display: flex;
+            align-items: center;
+        }
+        .user-info h3{
+            font-weight: 50;
+        }
+        .user-info img, #profileLogo{
+            /* making it round and fit */
+            border-radius: 100%; 
+            object-fit: cover;
+            object-position: center;
+            margin-right: 15px;
+        }
+        .profileLogo{
+            margin-top: 5px;
+        }
+        #profileLogo:hover{
+            width: 55px;
+            height: 55px;
+        }
+        .sub-menu hr{
+            border: 0;
+            height: 1px;
+            width: 100%;
+            background-color: #000000;
+            margin: 15px 0 10px;
+        }
+        .sub-menu-link{
+            display: flex; 
+            align-items: center;
+            text-decoration: none;
+            color: #000000;
+            margin: 12px 0;
+        }
+        .sub-menu-link:hover{
+            color:cornflowerblue;
+        }
+        .sub-menu-link p{
+            width: 100%;
+            margin-top: 16px;
+        }
+        .sub-menu-link img{
+            width: 35px;
+            padding: 0;
+            margin-right: 15px;
+        }
+        .homeLink{
+            text-decoration: none;
+            color: black;
+            box-shadow: 10px 10px 5px lightblue;
+        }
+        .homeLink:hover{
+            color: blue;
+        }
+        /* -----------------------------------Dashboard------------------------------------ */
+        .cardImg{
+            object-fit: cover;
+            object-position: center;
+            height: 150px;
+            width: 250px;
+        }
+        /* ----------------------------------profile upload------------------------------------------ */
+        .profile-img{
+            border-radius: 100%; 
+            object-fit: cover;
+            object-position: center;
+            height: 200px;
+            width: 200px;
+        }
+        .news-img{
+            object-fit: cover;
+            object-position: center;
+            height: 300px;
+            width: 400px;
+        }
+        /* Hide the original file input */
+        .custom-file-input {
+            visibility: hidden;
+        }
+        /* Style the custom file input */
+        .custom-file-label::after {
+            content: 'Upload'; /* Change the text of the button */
+        }
+        .custom-file-label::before {
+            content: url('upload-logo.svg'); /* Use a custom image for the button */
+            display: inline-block;
+            width: 20px; /* Adjust the width of the image */
+            height: 20px; /* Adjust the height of the image */
+            margin-right: 5px;
+        }
+        #uploadLogo:hover{
+            cursor:pointer;
+        }
+        #changePassword{
+            text-decoration: none;
+        }
+        #forgotPassword{
+            text-decoration: none;
+        }
+        /* --------------------------------Landing page------------------------------------- */
+        .option{
+            min-width: 400px;
+            padding: 120px 100px;
+            background-color: #D9D9D9;
+            border-radius: 10%;
+        }
+        .option:hover{
+            box-shadow: 10px 10px 5px lightblue;
+        }
+        .wrapper a{
+            text-decoration: none;
+            color: #000000;
+        }
+        /* --------------------------------------Login------------------------------------------------ */
+        
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+
+        .login-form-container {
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-right: 100px;
+            background-color: #ffffff;
+        }
+
+        .login-logo {
+            max-width: 100px;
+        }
+        /* ---------------------------------------Register--------------------------------------------------------- */
+        .preview {
+            margin-bottom: 20px;
+            border-radius: 100%; 
+            object-fit: cover;
+            object-position: center;
+            height: 200px;
+            width: 200px;
+        }
+        .reg-container{
+            width: 600px;
+            margin: auto;
+        }
+        #regUpload{
+            cursor:pointer;
+        }
+        /* ---------------------------------------requtested items info--------------------------------------------------------- */
+        .info-box {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .pending { background-color: #ffeeba; }
+        .approved { background-color: #c3e6cb; }
+        .disapproved { background-color: #f5c6cb; }
+        .cancel { background-color: #ddd; }
+
+        

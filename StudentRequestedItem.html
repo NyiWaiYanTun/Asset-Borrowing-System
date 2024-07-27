@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requested items</title>
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/global.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header row bg-muted shadow py-3 px-1 sticky-top">
+            <!-- Nav toggle and Heading -->
+            <div class="col-11 d-flex">
+                <a href="#"><img src="/public/img/list.png" alt="nav lists" id="nav-toggle"></a>
+                <h2 class="py-2">Asset Borrowing System</h2>
+            </div>
+            <!-- Profile pic -->
+            <div class="col-1 text-end">
+                <a href="#"><img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogo"></a>
+                <div class="sub-menu-wrap">
+                    <div class="sub-menu rounded text-start">
+                        <div class="user-info">
+                            <img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogoBig">
+                            <h3 id="profileName"></h3>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <img src="/public/img/gmail.png" class="my-0">
+                            <p id="profileEmail"></p>
+                        </a>
+                        <a href="/StudentProfile" class="sub-menu-link">
+                            <img src="/public/img/editProfile.png" class="my-0">
+                            <p><b>Edit profile</b></p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row scrollable">
+            <div class="nav col-md-3 col-lg-2 bg-muted shadow-lg">
+                <ul class="link-container">
+                    <a href="/StudentHome">
+                        <li>
+                            <img src="/public/img/home-button.png" alt="Home Button" width="20px"> <span
+                                class="fs-45">Home</span>
+                        </li>
+                    </a>
+                    <a href="/StudentAssetList">
+                        <li>
+                            <img src="/public/img/assetlist.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Asset List</span>
+                        </li>
+                    </a>
+                    <a href="/StudentRequestedItem">
+                        <li style="background-color: #D1D1D1;">
+                            <img src="/public/img/requesteditems.png" alt="Requested items" width="20px"> <span
+                                class="fs-5">Requested items</span>
+                        </li>
+                    </a>
+                    <a href="/StudentHistory">
+                        <li>
+                            <img src="/public/img/history.png" alt="History" width="20px"> <span
+                                class="fs-5">History</span>
+                        </li>
+                    </a>
+                    <button class="btn btn-dark rounded" id="logout">Log out</button>
+                </ul>
+            </div>
+
+            <div class="content col-md-9 col-lg-10">
+                <div id="status-greeting" class="fs-5 ms-4"></div>
+                <div class="container mt-2">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="info-box pending">
+                                <h4>Pending</h4>
+                                <p>Waiting for administrator approval.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box approved">
+                                <h4>Approved</h4>
+                                <p>Items ready for you to pick up.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="info-box disapproved">
+                                <h4>Disapproved</h4>
+                                <p>Items rejected for borrowing.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box cancel">
+                                <h4>Cancel button</h4>
+                                <p>Click on cancel to cancel request</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <th> Asset Name</th>
+                        <th> Asset Type</th>
+                        <th> Status</th>
+                        <th> </th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Modal trigger button -->
+   <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+        aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">
+                        Request details 
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Remark:  <br>
+                    <textarea id="remark" cols="15" rows="2" class="form form-control mb-2" style="width: 100%;" disabled>
+
+                    </textarea>
+                    Booked date: <br>
+                    <input type="text" id="date" class="form form-control"  disabled>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/public/scripts/global.js"></script>
+    <script src="/public//sweetalert2@11.js"></script>
+    <script src="/public/bootstrap.bundle.min.js"></script>
+    <script src="/public/scripts/StudentRequestedItem.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add News</title>
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/global.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header row bg-muted shadow py-3 px-1 sticky-top">
+            <!-- Nav toggle and Heading -->
+            <div class="col-11 d-flex">
+                <a href="#"><img src="/public/img/list.png" alt="nav lists" id="nav-toggle"></a>
+                <h2 class="py-2">Asset Borrowing System</h2>
+            </div>
+            <!-- Profile pic -->
+            <div class="col-1 text-end">
+                <a href="#"><img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogo"></a>
+                <div class="sub-menu-wrap">
+                    <div class="sub-menu rounded text-start">
+                        <div class="user-info">
+                            <img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogoBig">
+                            <h3 id="profileName"></h3>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <img src="/public/img/gmail.png" class="my-0">
+                            <p id="profileEmail"></p>
+                        </a>
+                        <a href="/StaffProfile" class="sub-menu-link">
+                            <img src="/public/img/editProfile.png" class="my-0">
+                            <p><b>Edit profile</b></p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row scrollable">
+            <div class="nav col-md-3 col-lg-2 bg-muted shadow-lg">
+                <ul class="link-container">
+                    <a href="/StaffDashboard">
+                        <li>
+                            <img src="/public/img/dashboard.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Dashboard</span>
+                        </li>
+                    </a>
+                    <a href="/StaffAssetList">
+                        <li>
+                            <img src="/public/img/assetlist.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Asset List</span>
+                        </li>
+                    </a>
+                    <a href="/StaffReturnItem">
+                        <li>
+                            <img src="/public/img/returnitems.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Return Item</span>
+                        </li>
+                    </a>
+                    <a href="/StaffTakeOutItem">
+                        <li>
+                            <img src="/public/img/takeout.png" alt="Asset Lists" width="20px"> <span class="fs-5">Take
+                                out Item</span>
+                        </li>
+                    </a>
+                    <a href="/StaffHistory">
+                        <li>
+                            <img src="/public/img/history.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">History</span>
+                        </li>
+                    </a>
+                    <a href="/StaffNews">
+                        <li style="background-color: #D1D1D1;">
+                            <img src="/public/img/news.png" alt="Asset Lists" width="20px"> <span class="fs-5">Add
+                                News</span>
+                        </li>
+                    </a>
+                    <button class="btn btn-dark rounded" id="logout">Log out</button>
+                </ul>
+            </div>
+            <div class="content col-md-9 col-lg-10">
+                <!-- carusal -->
+                <div id="carouselExampleControls" class="carousel slide mt-5 mb-2" data-bs-ride="carousel">
+                    <h1 class="ms-4">News</h1>
+                    <div class="news-inner carousel-inner" id="news-display">
+                        <!-- display news here -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="container mt-2">
+                    <div class="row">
+                        <div class="col-md-4 offset-md-4">
+                            <div id="photoContainer" class="text-center my-4">
+                                <img src="/public/img/anouncement.jpg" id="currentPhoto"
+                                    class="img-thumbnail border news-img" alt="Current Profile Photo">
+                            </div>
+                            <form id="editProfileForm">
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="form-control-file d-none" id="photo">
+                                        <label for="photo" id="uploadLogo"><img
+                                                src="/public/img/uploadProfile.png"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="title"><b>News title: </b></label>
+                                    <input type="text" class="form-control mt-1" id="title" placeholder="title...">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="desp"><b>Description: </b></label> <br>
+                                    <textarea id="desp" class="form-control mt-1" cols="30" rows="3"
+                                        placeholder="Description..."></textarea>
+                                </div>
+                                <div id="message"></div>
+                                <button type="submit" class="btn btn-primary mt-3" id="save">Save</button>
+                                <button type="button" class="btn btn-danger mt-3" id="removePhoto">Remove Photo</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/public/scripts/global.js"></script>
+    <script src="/public/jquery-3.7.1.min.js"></script>
+    <script src="/public/sweetalert2@11.js"></script>
+    <script src="/public/scripts/StaffAddNews.js"></script>
+</body>
+
+</html>

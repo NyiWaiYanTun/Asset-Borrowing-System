@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requested Items</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .info-box {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .pending { background-color: #ffeeba; }
+        .approved { background-color: #c3e6cb; }
+        .disapproved { background-color: #f5c6cb; }
+    </style>
+</head>
+<body>
+    <div id="status-greeting"></div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-box pending">
+                    <h4>Pending</h4>
+                    <p>Waiting for administrator approval.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info-box approved">
+                    <h4>Approved</h4>
+                    <p>Items approved for you to borrow.</p>
+                </div>
+                <div class="info-box disapproved">
+                    <h4>Disapproved</h4>
+                    <p>Items not approved for borrowing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
