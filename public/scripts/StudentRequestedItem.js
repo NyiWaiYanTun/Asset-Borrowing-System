@@ -14,7 +14,7 @@ async function GetRequestedItems() {
         })
       };
       const res = await fetch('/requestedAssets', options);
-      AssetData = res.status == 200 ? await res.json() : response.text();
+      AssetData = res.status == 200 ? await res.json() : await response.text();
     } catch (error) {
       console.log(error.message);
     }
