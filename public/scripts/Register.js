@@ -26,7 +26,6 @@ document.querySelector('#cancel').onclick = function () {
 }
 //verify
 async function verify(email) {
-  console.log('verifying');
   try {
     const options = {
       method: 'POST',
